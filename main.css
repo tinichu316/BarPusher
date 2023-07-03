@@ -1,0 +1,143 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* typical properties or variables */
+:root{
+  --exp-height: 4px;
+  --background: #92A8D1;
+}
+
+.page{
+  width: 100%;
+  background-color: var(--background);
+  padding: 20px;
+}
+
+/*
+#hud{
+  width: 100%;
+  padding: 1%;
+  user-select: none;
+}
+*/
+.barBackground {
+  width: 99%;
+  height: var(--exp-height);
+  background-color: #1C1110;
+}
+
+.barBackground .expBar {
+  width: 0%;
+  height: var(--exp-height);
+  background-color: lightgreen; /* #D19800; */
+  text-align: left; /* To center it horizontally (if you want) */
+  line-height: var(--exp-height); /* To center it vertically */
+  color: white; /* text colour */
+  /* transition: width 0.5s ease; */
+}
+
+.barBackground .expLine {
+  height: var(--exp-height);
+  position: relative;
+  width: 3px;
+  margin-left: auto; 
+  margin-right: 0px;
+  text-align: right;
+  background-color: white;
+  color: white;
+  user-select: none;
+}
+
+.barBackground .bossBar{
+  background-color: #D19800; /* #D19800; */
+}
+
+.barBackground .bossLine{
+  background-color: #C6BCB6;
+}
+
+
+/* UI stuff */
+.window {
+  width: 80%;
+  padding: 10px;
+  background-color: white;
+  display: none;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.windowHolder {
+  width: 100%;
+  padding-top: 10px;
+  background-color: var(--background);
+  height: auto;
+  z-index: 8;
+  user-select: none;
+}
+
+.row{
+  text-align:left;
+  /*the same margin which is every button have, it is for small screen, and if you have many buttons.*/
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+/* styles button within window */
+
+/* https://medium.com/@snowleo208/how-to-create-responsive-table-d1662cb62075 */
+.window .row{
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+  gap: auto;
+}
+
+.window .button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 4 px;
+  border: none;
+  cursor: pointer; /* show clickable on hover*/
+  opacity: 0.8;
+  width: 100px;
+  height: 30px;
+}
+
+.window .button:disabled, button[disabled]{
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* needs to be after button, so it only overrides the color. Else just plain red button. */
+.window .close {
+  background-color: red;
+}
+
+.window .shop {
+  background-color: sandybrown;
+}
+
+
+/* hover effects only if button is enabled */
+.window .button:hover:enabled, .openButton:hover:enabled {
+  opacity: 1;
+}
+
+
+.openButton{
+  /* when clicked, opens a window */
+  background-color: #555;
+  color: white;
+  padding: 4 px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 100px;
+  height: 30px;
+  user-select: none;
+
+}

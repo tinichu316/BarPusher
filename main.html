@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="main.css"> <!-- link to the css file -->
+</head>
+<body>
+
+<div class="page">
+<h1>Pusher</h1>
+<p>Press any key or button to push forward.</p>
+
+<!--
+<div id="myProgress">
+  <div id="myBar">10pp</div>
+</div>
+
+<button type="myButton" onclick="move()">Click me!</button>
+-->
+
+
+<div class="barBackground">
+  <div class="expBar" id="expBar">
+    <div class = "expLine" id="expLine"></div>
+  </div>
+
+</div>
+
+<br>
+
+<div id="row">
+  <div id="cashText"></div>
+  <div id="totalCashText"></div>
+</div>
+
+
+<!-- all the buttons are here. -->
+<div class="row">
+  <button class="openButton" onclick="addGas(100)">Push</button>
+  <button class="openButton" onclick="toggleWindow('testWindow')">Open Form</button>
+  <button class="openButton" onclick="toggleWindow('shopWindow'); updateShop()">Shop</button>
+</div>
+
+
+<!-- put windows here. Higher windows show up earlier.-->
+<div class="windowHolder">
+  <div class="window" id ="testWindow">
+    <h1>This is a test window</h1>
+
+    <button type="button" class="button close" onclick="closeWindow('testWindow')">X</button>
+    <button type="button" class="button" onclick="closeWindow('testWindow')">Ok</button>
+  </div>
+
+  <div class="window" id ="devWindow">
+    <h1>This is the dev window</h1>
+    <div id="velText">velocity: 0</div>
+    <div id="bufferText"></div>
+    <button type="button" class="button" onclick="addCash(1)">$$$</button>
+
+  </div>
+
+  <div class="window" id ="shopWindow">
+    <h1>Welcome to the shop!</h1>
+      <!-- One shop item. Keep same naming convention! -->
+      <div class="row">
+        <p>Reduce Drag</p>
+        <p id="shop_level_Drag">Level: 000</p>
+        <button type="button" class="button shop" id="shop_button_Drag" onclick="buyUpgrade(upgrades.Drag)">$100</button>
+      </div>
+
+      <div class="row">
+        <p>Increase Engine</p>
+        <p id="shop_level_BufferSize">Level: 000</p>
+        <button type="button" class="button shop" id="shop_button_BufferSize" onclick="buyUpgrade(upgrades.BufferSize)">$100</button>
+      </div>
+
+      <div class="row">
+        <p>Decrease Friction</p>
+        <p id="shop_level_BufferDecay">Level: 000</p>
+        <button type="button" class="button shop" id="shop_button_BufferDecay" onclick="buyUpgrade(upgrades.BufferDecay)">$100</button>
+      </div>
+
+      <div class="row">
+        <p>Increase Tailwind</p>
+        <p id="shop_level_DripRate">Level: 000</p>
+        <button type="button" class="button shop" id="shop_button_DripRate" onclick="buyUpgrade(upgrades.DripRate)">$100</button>
+      </div>
+
+  </div>
+
+</div>
+
+<br>
+<button type="button" onclick="resetProgress()">Reset Everything</button>
+
+</div>
+<script type="text/javascript" src="gameManager.js"></script> <!-- link to the javascript file -->
+</body>
+</html>
